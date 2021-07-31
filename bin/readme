@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "readme_yard"
+require "tty-markdown"
+
+arg, options = ARGV
+ReadmeYard.call(arg, options)

@@ -1,28 +1,10 @@
 # Readme Yard
 
-An experiment in building a better README with
-[YARD](https://yardoc.org).
-Take a look at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md)
-to see the template from which this README was generated.
-
-If you're reading the README, that means this text is here
-because `{@readme ReadmeYard}` is in
-[README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md)
-and someone ran `readme build` at the command line.
-
-If you're looking at the [source code](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb) or
-[documentation](https://rubydoc.info/github/mattruzicka/readme_yard/master/ReadmeYard),
-_welcome_ to readme yard 🌿 🥏
+{@readme ReadmeYard}
 
 ---
 
-## Command Line Usage
-
-`readme` - Prints command line usage.
-
-`readme build` - Reads from README_YARD.md and writes to README.md.
-
-`readme doc` - Same as `readme build` + generates yard docs.
+{@readme ReadmeYard#command_line_usage}
 
 ---
 
@@ -48,8 +30,7 @@ Usage: `{@readme ObjectPath}`
 
 `{@readme ReadmeYard#command_line_usage}` is used to generate the "Command Line Usage" section above from the comments located above. `ReadmeYard#command_line_usage` references the instance method `command_line_usage` located in [lib/readme_yard.rb](lib/readme_yard.rb).
 
-`{@readme ReadmeYard.hello_world}` - is used to generate this text in README.md. `ReadmeYard.hello_world` references
-the class method located in [lib/readme_yard.rb](lib/readme_yard.rb).
+`{@readme ReadmeYard.hello_world}` - {@readme ReadmeYard.hello_world}
 
 ### @example
 
@@ -57,9 +38,7 @@ Usage: `{@example ObjectPath}`
 
 The below example code is generated from placing `{@example ReadmeYard.hello_world}` in README_YARD.md.
 
-```ruby
-ReadmeYard.hello_world => "Hello 🌎 🌍 🌏"
-```
+{@example ReadmeYard.hello_world}
 
 ---
 
