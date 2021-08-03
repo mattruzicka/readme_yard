@@ -16,7 +16,7 @@ require_relative "readme_yard/version"
 #   and someone ran `readme build` at the command line.
 #
 #   If you're looking at the [source code](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb) or
-#   [documentation](https://rubydoc.info/github/mattruzicka/readme_yard/master/ReadmeYard),
+#   [documentation](https://rubydoc.info/github/mattruzicka/readme_yard),
 #   _welcome_ to readme yard 🌿 🥏
 #
 class ReadmeYard
@@ -31,7 +31,7 @@ class ReadmeYard
   #
   # @readme
   #   is used to generate this text in README.md. `ReadmeYard.hello_world` references
-  #   the class method located in [lib/readme_yard.rb](lib/readme_yard.rb).
+  #   the class method located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
   #
   # @example
   #   ReadmeYard.hello_world => "Hello 🌎 🌍 🌏"

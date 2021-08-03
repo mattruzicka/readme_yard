@@ -26,9 +26,9 @@ The following tags can be used in README_YARD.md to generate YARD documentation 
 
 Usage: `{@readme ObjectPath}`
 
-`{@readme ReadmeYard}` is used at the top of this project's README_YARD.md file to generate this README's title and description. `ReadmeYard` references the class located in [lib/readme_yard.rb](lib/readme_yard.rb).
+`{@readme ReadmeYard}` is used at the top of this project's README_YARD.md file to generate this README's title and description. `ReadmeYard` references the class located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
 
-`{@readme ReadmeYard#command_line_usage}` is used to generate the "Command Line Usage" section above from the comments located above. `ReadmeYard#command_line_usage` references the instance method `command_line_usage` located in [lib/readme_yard.rb](lib/readme_yard.rb).
+`{@readme ReadmeYard#command_line_usage}` is used to generate the "Command Line Usage" section above from the comments located above. `ReadmeYard#command_line_usage` references the instance method `command_line_usage` located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
 
 `{@readme ReadmeYard.hello_world}` - {@readme ReadmeYard.hello_world}
 
