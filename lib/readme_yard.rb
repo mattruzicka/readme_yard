@@ -22,8 +22,13 @@ require_relative "readme_yard/version"
 class ReadmeYard
   class Error < StandardError
     class << self
-      def tag_not_found(tag_name, object_path)
-        new("The `@#{tag_name}` tag could not be found at `#{object_path}`")
+      # TODO: Look for instance method with same name if
+      # class method and vise versa to give a more helpful error.
+      # Also, look for the object path in other scopes.
+      def object_not_found(tag_name, object_path)
+        new("`#{object_path}` could not be found. Perhaps" \
+            " the `@#{tag_name}` tag was moved, mispelled," \
+            " or the `.yardopts` YARD file is missing the file path.")
       end
     end
   end
