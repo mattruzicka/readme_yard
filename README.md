@@ -1,11 +1,11 @@
-# Readme Yard
+# Readme Yard 🌿
 [![Gem Version](https://badge.fury.io/rb/readme_yard.svg)](https://badge.fury.io/rb/readme_yard)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9fe0012930c3886dbe00/maintainability)](https://codeclimate.com/github/mattruzicka/readme_yard/maintainability)
 
 An experiment in building a better README with
 [YARD](https://yardoc.org).
 Take a look at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md)
-to see the template from which this README was generated.
+to see the template from which the README for this project was generated.
 
 If you're reading the README, that means this text is here
 because `{@readme ReadmeYard}` is in
@@ -14,7 +14,7 @@ and someone ran `readme build` at the command line.
 
 If you're looking at the [source code](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb) or
 [documentation](https://rubydoc.info/github/mattruzicka/readme_yard),
-_welcome_ to readme yard 🌿 🥏
+_welcome_ to readme yard!
 
 ---
 
@@ -50,7 +50,7 @@ Usage: `{@readme ObjectPath}`
 
 `{@readme ReadmeYard#command_line_usage}` is used to generate the "Command Line Usage" section above from the comments located above. `ReadmeYard#command_line_usage` references the instance method `command_line_usage` located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
 
-`{@readme ReadmeYard.hello_world}` - is used to generate this text in README.md. `ReadmeYard.hello_world` references
+`{@readme ReadmeYard.hello_world}` - This object only exists so that you can read this in the README. `ReadmeYard.hello_world` references
 the class method located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
 
 ### @example

@@ -8,7 +8,7 @@ require_relative "readme_yard/version"
 #   An experiment in building a better README with
 #   [YARD](https://yardoc.org).
 #   Take a look at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md)
-#   to see the template from which this README was generated.
+#   to see the template from which the README for this project was generated.
 #
 #   If you're reading the README, that means this text is here
 #   because `{@readme ReadmeYard}` is in
@@ -17,7 +17,7 @@ require_relative "readme_yard/version"
 #
 #   If you're looking at the [source code](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb) or
 #   [documentation](https://rubydoc.info/github/mattruzicka/readme_yard),
-#   _welcome_ to readme yard 🌿 🥏
+#   _welcome_ to readme yard!
 #
 class ReadmeYard
   class Error < StandardError
@@ -35,7 +35,7 @@ class ReadmeYard
 
   #
   # @readme
-  #   is used to generate this text in README.md. `ReadmeYard.hello_world` references
+  #   This object only exists so that you can read this in the README. `ReadmeYard.hello_world` references
   #   the class method located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
   #
   # @example
@@ -132,7 +132,7 @@ class ReadmeYard
 
   #
   # This method adds the below paragraph to a project's
-  # README.md file, if it doesn't already have one when running
+  # README file, if it doesn't already have one when running
   # `readme build` for the first time.
   #
   # @readme
