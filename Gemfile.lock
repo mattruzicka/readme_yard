@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    readme_yard (0.1.1)
+    readme_yard (0.1.2)
       tty-markdown (~> 0.7)
       yard-readme (~> 0.1)
 
