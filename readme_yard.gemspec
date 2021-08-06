@@ -9,9 +9,6 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
 
   spec.summary = "Build a better README with YARD."
-  spec.description = "An experiment in building a README that summarizes" \
-                     "and contextualizes the code and documentation, without" \
-                     " duplicating them, so as to make keeping it up-to-date easier."
   spec.homepage = "https://github.com/mattruzicka/readme_yard"
   spec.required_ruby_version = ">= 2.5"
 
