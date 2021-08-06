@@ -55,7 +55,7 @@ class ReadmeYard
       puts TTY::Markdown.parse(readme_yard.command_line_usage)
     end
   rescue Error => e
-    puts TTY::Markdown.parse(e)
+    puts TTY::Markdown.parse(e.message)
   end
 
   def initialize
