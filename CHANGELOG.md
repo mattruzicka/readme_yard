@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## 0.2.0 - 2021-08-08
+
+- Add new readme tag types - `comment`, `source`, and `object`. Log warnings and raise errors when helpful. Update README. 51997f24d5209fd8f0e5e11511352f6457bb9dbe
+
 ## 0.1.2 - 2021-08-06
 
 - Fix error message markdown parsing. 0f1c3fa4f39c6d7a1628f81e1ea41489b7021254
