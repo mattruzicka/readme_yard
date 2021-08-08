@@ -75,7 +75,7 @@ The above two sentences were generated via `{@readme ReadmeYard::ReadmeTag}` in 
 
 {@readme ReadmeYard::CommentTag}
 
-[This @readme comment YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/comment_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::CommentTag.format_tag_markdown}` is in README_YARD.md.
+[This example comment tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/comment_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::CommentTag.format_tag_markdown}` is in README_YARD.md.
 
 {@readme ReadmeYard::CommentTag.format_tag_markdown}
 
@@ -83,7 +83,7 @@ The above two sentences were generated via `{@readme ReadmeYard::ReadmeTag}` in 
 
 {@readme ReadmeYard::SourceTag}
 
-[This @readme source YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::SourceTag.format_tag_markdown}` is in README_YARD.md.
+[This example source tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::SourceTag.format_tag_markdown}` is in README_YARD.md.
 
 {@readme ReadmeYard::SourceTag.format_tag_markdown}
 
@@ -92,7 +92,7 @@ The above two sentences were generated via `{@readme ReadmeYard::ReadmeTag}` in 
 
 {@readme ReadmeYard::ObjectTag}
 
-[This @readme object YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::ObjectTag.format_tag_markdown}` is in README_YARD.md.
+[This example object tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::ObjectTag.format_tag_markdown}` is in README_YARD.md.
 
 {@readme ReadmeYard::ObjectTag.format_tag_markdown}
 

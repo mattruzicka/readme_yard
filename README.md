@@ -108,12 +108,12 @@ The above two sentences were generated via `{@readme ReadmeYard::ReadmeTag}` in 
 ```@readme comment``` - Embeds the comment.
 
 
-[This @readme comment YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/comment_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::CommentTag.format_tag_markdown}` is in README_YARD.md.
+[This example comment tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/comment_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::CommentTag.format_tag_markdown}` is in README_YARD.md.
 
 ```ruby
 #
 # This comment is in the README because `@readme comment`
-# is below, in the source code.
+# is below (in the source code).
 #
 ```
 
@@ -123,7 +123,7 @@ The above two sentences were generated via `{@readme ReadmeYard::ReadmeTag}` in 
 ```@readme source``` - Embeds the source.
 
 
-[This @readme source YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::SourceTag.format_tag_markdown}` is in README_YARD.md.
+[This example source tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::SourceTag.format_tag_markdown}` is in README_YARD.md.
 
 ```ruby
 def format_tag_markdown(yard_object, _tag)
@@ -138,12 +138,12 @@ end
 ```@readme object``` - Embeds the comment and source.
 
 
-[This @readme object YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::ObjectTag.format_tag_markdown}` is in README_YARD.md.
+[This example object tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::ObjectTag.format_tag_markdown}` is in README_YARD.md.
 
 ```ruby
 #
 # This method's comment and code is in the README because
-# because `@readme object` is below, in the actual source code.
+# `@readme object` is below (in the source code).
 #
 def format_tag_markdown(yard_object, _tag)
   text = CommentTag.format_docstring_as_comment(yard_object)

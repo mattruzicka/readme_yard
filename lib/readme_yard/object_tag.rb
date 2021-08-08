@@ -7,7 +7,7 @@ class ReadmeYard
     class << self
       #
       # This method's comment and code is in the README because
-      # because `@readme object` is below, in the actual source code.
+      # `@readme object` is below (in the source code).
       #
       # @readme object
       #

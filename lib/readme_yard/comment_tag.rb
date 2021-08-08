@@ -7,7 +7,7 @@ class ReadmeYard
     class << self
       #
       # This comment is in the README because `@readme comment`
-      # is below, in the source code.
+      # is below (in the source code).
       #
       # @readme comment
       #
