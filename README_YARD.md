@@ -6,84 +6,117 @@
 
 ---
 
+## Table of Contents
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Command Line Usage](#command-line-usage)
+- [Tag Usage](#tag-usage)
+- [Readme Tag](#readme-tag)
+- [Readme YARD Tags](#readme-yard-tags)
+- [Example Tag](#example-tag)
+- [Contributing](#contributing)
+
+---
+
+## Installation
+
+Add [gem "readme_yard"](https://rubygems.org/gems/readme_yard) to your application's Gemfile and run `bundle install` or install it yourself with: `gem install readme_yard`
+
+## Getting Started
+
+Run `readme build` at the command line. That will create a README_YARD.md file if there isn’t one by copying your exisiting README.md file.
+
+README_YARD.md is the template from which `readme build` generates the README. It augments your markdown with tagging capabilities as described in the section on [Tag Usage](#tag-usage).
+
+---
+
 {@readme ReadmeYard#command_line_usage}
 
 ---
 
-## Getting Started
+## Tag Usage
 
-Add [gem "readme_yard"](https://rubygems.org/gems/readme_yard) to your application's Gemfile and run `bundle install` or install it yourself with `gem install readme_yard`.
+Readme Yard uses **README tags** and **YARD tags** in order to find, format, and embed Ruby source code inside README.md.
 
-Next run `readme build` at the command line. This creates a README_YARD.md file if there isn’t one by copying the README file if it exists. It then parses README_YARD.md and writes the result to README.md.
+**README tags** live inside README_YARD.md.
 
-In addition to being able to use tags as documented in the next section, you can edit the README_YARD file just as you would edit any README. Then to see changes made to README_YARD reflected in the README, run `readme build`.
+**YARD tags** live inside Ruby source code.
+
+When the Readme Yard build process encounters a tag in README_YARD.md, it searches the Ruby source code for its YARD tag counterpart, formats the output, and embeds it in the README file.
+
+### Examples
+
+This project's [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md) has `{@readme ReadmeYard.hello_world}` just below this paragraph, unless you're looking at the [README]((https://github.com/mattruzicka/readme_yard/blob/main/README.md)) where you should instead see a code example which was generated from running `readme build`.
+
+{@readme ReadmeYard.hello_world}
+
+The README tag tells Readme Yard to parse the `@readme` YARD tag located above the `hello_world` class method located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
+
+To use another "meta" example, `{@readme ReadmeYard}` is used at the top of this project's README_YARD.md file to generate the first few sentences of this README. `ReadmeYard` references the class located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
+
+Last one, `{@readme ReadmeYard#command_line_usage}` is used to generate the "Command Line Usage" section above from the comments located above. `ReadmeYard#command_line_usage` references the instance method `command_line_usage` located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
 
 ---
 
-## Usage
+## Readme Tag
 
-The following tags can be used in README_YARD.md to generate YARD documentation inside your README.
+**README Tag** syntax: `{@readme ObjectPath}`
 
-### @readme
+**YARD Tag** syntax: `@example <name>`
 
-Usage: `{@readme ObjectPath}`
+{@readme ReadmeYard::ReadmeTag}
 
-`{@readme ReadmeYard}` is used at the top of this project's README_YARD.md file to generate this README's title and description. `ReadmeYard` references the class located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
+The above two sentences were generated via `{@readme ReadmeYard::ReadmeTag}` in README_YARD.md and the @readme tag at the top of [ReadmeYard::ReadmeTag class](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb).
 
-`{@readme ReadmeYard#command_line_usage}` is used to generate the "Command Line Usage" section above from the comments located above. `ReadmeYard#command_line_usage` references the instance method `command_line_usage` located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
+## Readme YARD Tags
 
-`{@readme ReadmeYard.hello_world}` - {@readme ReadmeYard.hello_world}
 
-### @example
+### Comment Tag
 
-Usage: `{@example ObjectPath}`
+{@readme ReadmeYard::CommentTag}
 
-The below example code is generated from placing `{@example ReadmeYard.hello_world}` in README_YARD.md.
+[This @readme comment YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/comment_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::CommentTag.format_tag_markdown}` is in README_YARD.md.
+
+{@readme ReadmeYard::CommentTag.format_tag_markdown}
+
+### Source Tag
+
+{@readme ReadmeYard::SourceTag}
+
+[This @readme source YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::SourceTag.format_tag_markdown}` is in README_YARD.md.
+
+{@readme ReadmeYard::SourceTag.format_tag_markdown}
+
+
+### Object Tag
+
+{@readme ReadmeYard::ObjectTag}
+
+[This @readme object YARD tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/readme_tag.rb) embeds the below code snippet because `{@readme ReadmeYard::ObjectTag.format_tag_markdown}` is in README_YARD.md.
+
+{@readme ReadmeYard::ObjectTag.format_tag_markdown}
+
+
+---
+
+## Example Tag
+
+**README Tag** syntax: `{@example ObjectPath}`
+
+**YARD Tag** example: `@example`
+
+{@readme ReadmeYard.hello_world}
+
+Given that the above comment is for the `hello_world` class method, the below example code is generated from placing `{@example ReadmeYard.hello_world}` in README_YARD.md.
 
 {@example ReadmeYard.hello_world}
-
----
-
-## Inspiration
-
-The desire to have the code, README, and documentation for [Evolvable](https://github.com/mattruzicka/evolvable) be useful, synced, and correct as I work on documenting the [1.1.0 Release](https://github.com/mattruzicka/evolvable/pull/8).
-
-I want a README that summarizes and contextualizes the code and documentation, without duplicating them, so as to make keeping it up-to-date easier. Laziness!
-
----
-
-## Ideas
-
-- Embed whole doc string if @readme tag is found, but there’s no text.
-
-- Embed whole method if @example tag is found, but no text.
-
-- `readme tags` - Prints usage and a list of all tags
-
-- `readme tags -v` - Prints docstrings of all tags
-
-- `readme tags <tag>` - Prints list of matching tags
-
-- `readme tags <tag>` - Prints list of matching tag docstrings
-
-- Improve linking. At the moment, there's lots of room for error when adding links in the YARD documentation.
-
-- Support @todo tags or any other native YARD tags that might be useful.
-
-- Add ability to target a particular tag in a doc string from README_YARD.md. Maybe via a tag directive?
-
-- Follow @see links to find tags
-
-- Integrate something like https://github.com/lsegal/yard-examples/blob/master/doctest/doctest.rb to add red/green test status to code example. Maybe via some sort of tag directive?
-
-- Be able to customize the name of the source and target files.
-
-- Integrate with the YARD server so that changes to documentation or README_YARD.md automatically regenerate the README
-
-- Be able to register regexes for matching tags and running given blocks. Use to create functionality for tagging GitHub source.
 
 ---
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mattruzicka/yard-readme.
+
+Thanks for taking the time to think about me, the README.
+
+🌿 🥏 🌱 ⚽

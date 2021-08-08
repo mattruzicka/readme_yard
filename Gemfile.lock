@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    readme_yard (0.1.2)
+    readme_yard (0.2.0)
       tty-markdown (~> 0.7)
-      yard-readme (~> 0.1)
+      yard-readme (~> 0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -31,7 +31,7 @@ GEM
     unicode-display_width (2.0.0)
     unicode_utils (1.4.0)
     yard (0.9.26)
-    yard-readme (0.1.1)
+    yard-readme (0.3.0)
       yard (~> 0.9.26)
 
 PLATFORMS
