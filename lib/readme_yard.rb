@@ -25,8 +25,7 @@ YARDReadme::DocstringParser.readme_tag_names = %w[comment source object]
 #   template for this project.
 #   If you're reading the README, that means this text is here
 #   because `{@readme ReadmeYard}` is in README_YARD.md
-#   and someone ran `readme build` at the command line.
-#
+#   and `readme build` was run at the command line.
 #   Here's the [full documentation](https://rubydoc.info/github/mattruzicka/readme_yard).
 #
 class ReadmeYard
