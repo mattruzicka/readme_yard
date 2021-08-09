@@ -36,11 +36,7 @@ README_YARD.md is the template from which `readme build` generates the README. I
 
 ## Tag Usage
 
-Readme Yard uses **README tags** and **YARD tags** in order to find, format, and embed Ruby source code inside README.md.
-
-**README tags** live inside README_YARD.md.
-
-**YARD tags** live inside Ruby source code.
+Readme Yard uses **README tags** and **YARD tags**. **README tags** live inside README_YARD.md. **YARD tags** live inside Ruby source code.
 
 When the Readme Yard build process encounters a tag in README_YARD.md, it searches the Ruby source code for its YARD tag counterpart, formats the output, and embeds it in the README file.
 
