@@ -20,6 +20,12 @@ Here's the [full documentation](https://rubydoc.info/github/mattruzicka/readme_y
 
 ---
 
+⚠️ **It's tempting to accidentally edit README.md instead of README_YARD.md and lose your changes** by running `readme build`.
+
+I plan on implementing safeguards to prevent this kind of thing, but ultimately I want to support editing the README directly. One idea is to leverage git in order to merge README.md changes into the relevant source code and README_YARD.md sections. The README_YARD.md file basically acts as a translation layer between your source code and README, so it can theoretically be used to generate changes both ways. I also think it could be used to keep state, like edit history, for implementing safeguards and awesome features. [PRs are welcome](#contributing); Feel free to reach out 🙂.
+
+---
+
 ## Table of Contents
 - [Installation](#installation)
 - [Getting Started](#getting-started)
