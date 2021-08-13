@@ -173,7 +173,7 @@ end
 
 **Markdown** syntax: `{@example ObjectPath}`
 
-**YARD** example: `@example`
+**YARD** syntax: `@example`
 
 ```ruby
 #

@@ -106,7 +106,7 @@ This example ["@readme object" tag](https://github.com/mattruzicka/readme_yard/b
 
 **Markdown** syntax: `{@example ObjectPath}`
 
-**YARD** example: `@example`
+**YARD** syntax: `@example`
 
 {@readme ReadmeYard.hello_world}
 
