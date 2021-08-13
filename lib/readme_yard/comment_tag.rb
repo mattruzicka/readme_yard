@@ -1,7 +1,10 @@
 class ReadmeYard
   #
   # @readme
-  #   ```@readme comment``` - Embeds the comment.
+  #   Embed comments
+  #
+  # @example
+  #   # @readme comment
   #
   class CommentTag
     class << self

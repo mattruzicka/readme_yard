@@ -1,7 +1,10 @@
 class ReadmeYard
   #
   # @readme
-  #   ```@readme object``` - Embeds the comment and source.
+  #   Embed comments and source code
+  #
+  # @example
+  #   # @readme object
   #
   class ObjectTag
     class << self

@@ -1,7 +1,10 @@
 class ReadmeYard
   #
   # @readme
-  #   ```@readme source``` - Embeds the source.
+  #   Embed source code
+  #
+  # @example
+  #   # @readme source
   #
   class SourceTag
     class << self

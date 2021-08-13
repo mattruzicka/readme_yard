@@ -14,23 +14,24 @@ YARDReadme::DocstringParser.readme_tag_names = %w[comment source object]
 
 #
 # @readme
-#   Build a better README with [YARD](https://yardoc.org).
+#   Build a better README with [YARD](https://yardoc.org)
+#   by generating it straight from the source.
 #
-#   This gem aims to minimize the effort needed to
-#   keep your README and docs useful and correct
-#   by generating them straight from the source.
+#   This gem aims to minimize the effort needed to keep your
+#   README, documentation, and source code synced, useful,
+#   and correct.
 #
-#   To see how it works, check out the
-#   [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md)
-#   template for this project.
+#   Look at the [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md)
+#   template for this project to see how it works.
 #   If you're reading the README, that means this text is here
-#   because `{@readme ReadmeYard}` is in README_YARD.md
-#   and `readme build` was run at the command line.
+#   because the custom `{@readme ReadmeYard}` markdown tag is in
+#   README_YARD.md and `readme build` was run at the command line.
+#
 #   Here's the [full documentation](https://rubydoc.info/github/mattruzicka/readme_yard).
 #
 class ReadmeYard
   #
-  # @readme comment
+  # @readme object
   #
   # @example
   #   ReadmeYard.hello_world #=> "Hello 🌎 🌍 🌏"

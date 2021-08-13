@@ -1,11 +1,9 @@
 class ReadmeYard
   #
   # @readme
-  #   By default, only the text nested under the @readme tag
-  #   will be embedded in the final output.
-  #
-  #   Different embed options are provided via the following
-  #   name options: `comment`, `source`, and `object`.
+  #   By default, only the text nested under a @readme tag
+  #   will be embedded in the final output. The default
+  #   embed behavior can be changed through the use of tag names.
   #
   # @see ReadmeYard::CommentTag
   # @see ReadmeYard::SourceTag
