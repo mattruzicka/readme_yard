@@ -98,8 +98,7 @@ class ReadmeYard
   # `-q` silence yardoc output statements
   #
   def build(options: "-nq")
-    find_or_upsert_yardopts
-    run_yardoc(options: options)
+    YARD::CLI::Yardoc.run(options || "-nq")
     File.write(readme_path, gsub_tags!(readme_yard_md))
   end
 
@@ -107,11 +106,8 @@ class ReadmeYard
   # @readme Same as "build" + generates yard docs.
   #
   def doc(options: "-q")
+    YardOptsManager.upsert_yardopts
     build(options: options || "-q")
-  end
-
-  def run_yardoc(options: "-nq")
-    YARD::CLI::Yardoc.run(options || "-nq")
   end
 
   private
