@@ -4,5 +4,6 @@
 require "bundler/setup"
 require "readme_yard"
 
-arg, options = ARGV
+arg, *arg_options = ARGV.dup
+options = arg_options.join(" ") unless arg_options.empty?
 ReadmeYard.call(arg, options)
