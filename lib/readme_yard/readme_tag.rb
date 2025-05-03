@@ -28,7 +28,7 @@ class ReadmeYard
 
       def format_yard_tag(yard_object, tag)
         if tag.name && !tag.name.empty?
-          tag_class = ReadmeYard.lookup_tag_class(tag.name)
+          tag_class = TagRegistry.find_class(tag.name)
           tag_class&.format_tag_markdown(yard_object, tag)
         elsif tag.text && !tag.text.empty?
           format_tag_markdown(yard_object, tag)

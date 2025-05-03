@@ -10,8 +10,9 @@ require_relative "readme_yard/example_tag"
 require_relative "readme_yard/comment_tag"
 require_relative "readme_yard/source_tag"
 require_relative "readme_yard/object_tag"
+require_relative "readme_yard/tag_registry"
 
-YARDReadme::DocstringParser.readme_tag_names = %w[comment source object]
+YARD::Readme::DocstringParser.readme_tag_names = ReadmeYard::TagRegistry.tag_names
 
 #
 # @readme
@@ -57,16 +58,6 @@ class ReadmeYard
     end
   rescue Error => e
     puts TTY::Markdown.parse(e.message)
-  end
-
-  TAG_CLASS_LOOKUP = { "readme" => ReadmeTag,
-                       "example" => ExampleTag,
-                       "source" => SourceTag,
-                       "comment" => CommentTag,
-                       "object" => ObjectTag }.freeze
-
-  def self.lookup_tag_class(tag_name)
-    TAG_CLASS_LOOKUP[tag_name]
   end
 
   def initialize
@@ -206,7 +197,7 @@ class ReadmeYard
       warn_about_yard_tags_not_found(yard_object, tag_name)
       string
     else
-      tag_class = self.class.lookup_tag_class(tag_name)
+      tag_class = TagRegistry.find_class(tag_name)
       tag_class.format_markdown(yard_object, yard_tags)
     end
   end

@@ -37,7 +37,7 @@ class ReadmeYard
       end
 
       def named_readme_tag_regex
-        @named_readme_tag_regex ||= /(\n|^)@readme\s(#{YARDReadme::DocstringParser.readme_tag_names.join("|")})\n/
+        @named_readme_tag_regex ||= /(\n|^)@readme\s(#{ReadmeYard::TagRegistry.tag_names.join("|")})\n/
       end
     end
   end
