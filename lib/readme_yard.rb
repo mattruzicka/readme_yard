@@ -11,6 +11,7 @@ require_relative "readme_yard/comment_tag"
 require_relative "readme_yard/source_tag"
 require_relative "readme_yard/object_tag"
 require_relative "readme_yard/tag_registry"
+require_relative "readme_yard/yard_opts_manager"
 
 YARD::Readme::DocstringParser.readme_tag_names = ReadmeYard::TagRegistry.tag_names
 
@@ -136,43 +137,6 @@ class ReadmeYard
      " for usage.\n\n{@readme ReadmeYard#default_readme_yard_md}"
   end
 
-  YARDOPTS_FILE = ".yardopts"
-
-  def find_or_upsert_yardopts
-    File.exist?(YARDOPTS_FILE) ? update_yardopts_file : create_yardopts_file
-  end
-
-  def update_yardopts_file
-    text = File.read(YARDOPTS_FILE)
-    text_addition = build_yardopts_text_addition(text)
-    File.open(YARDOPTS_FILE, "a") { |f| f.write(text_addition) } if text_addition
-  end
-
-  def build_yardopts_text_addition(yardopts_text)
-    return if yardopts_text.match?(/\s*--plugin\s+readme\W/)
-
-    readme_plugin_opts = default_readme_plugin_opts(yardopts_text)
-    case yardopts_text
-    when /\s*--markup\s+markdown/, /\s*-m\s+markdown/
-      readme_plugin_opts
-    when /\s*--markup\s/, /\s*-m\s/
-      warn_about_supported_markdown
-      readme_plugin_opts
-    else
-      readme_plugin_opts << "--markup markdown\n"
-    end
-  end
-
-  def default_readme_plugin_opts(yardopts_text)
-    readme_opts = +""
-    readme_opts << "\n" unless yardopts_text.lines.last.include?("\n")
-    readme_opts << "--plugin readme\n"
-  end
-
-  def create_yardopts_file
-    File.write(YARDOPTS_FILE, "--plugin readme\n--markup markdown\n")
-  end
-
   def gsub_tags!(markdown)
     markdown.gsub!(/([^`]|^)(\{@\w+\s.+\})/) { |string| format_tag_markdown(string) }
     markdown
@@ -214,11 +178,6 @@ class ReadmeYard
     gem_spec = Gem::Specification.find_by_name("readme_yard")
     current_file_path = File.join(gem_spec.full_gem_path, "lib", "readme_yard.rb")
     YARD.parse(current_file_path)
-  end
-
-  def warn_about_supported_markdown
-    Logger.warn "\n*Readme Yard* works best with markdown." \
-                "\nConsider adding `--markup markdown` to your `.yardopts` file.\n\n"
   end
 
   def warn_about_yard_tags_not_found(yard_object, tag_name)
