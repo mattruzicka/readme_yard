@@ -58,8 +58,8 @@ class ReadmeYard
     case arg
     when "build"
       readme_yard.build(options: options)
-    when "doc"
-      readme_yard.doc(options: options)
+    when "yard"
+      readme_yard.yard(options: options)
     else
       Logger.puts_md(readme_yard.command_line_usage)
     end
@@ -84,7 +84,7 @@ class ReadmeYard
   #
   #   `readme build` - Reads from README_YARD.md and writes to README.md.
   #
-  #   `readme doc` - Same as `readme build` + generates yard docs.
+  #   `readme yard` - Same as `readme build` + generates yard docs.
   #
   def command_line_usage
     yard_parse_this_file
@@ -111,7 +111,7 @@ class ReadmeYard
   #
   # @readme Same as "build" + generates yard docs.
   #
-  def doc(options: "-q")
+  def yard(options: "-q")
     YardOptsManager.upsert_yardopts
     build(options: options || "-q")
   end

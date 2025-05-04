@@ -9,6 +9,7 @@
 - Add new ValueTag and StringTag
 - Add standalone tag support: enable embedding yard content in README without yard tags in the source code
 - Rename format methods for consistency
+- Rename `readme doc` command to `readme yard` for clarity and improved memorability
 
 ## 0.2.0 - 2021-08-08
 

@@ -66,7 +66,7 @@ See [Tag Usage](#tag-usage).
 
 `readme build` - Reads from README_YARD.md and writes to README.md.
 
-`readme doc` - Same as `readme build` + generates yard docs.
+`readme yard` - Same as `readme build` + generates yard docs.
 
 
 ---
