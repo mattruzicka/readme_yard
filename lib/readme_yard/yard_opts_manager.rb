@@ -41,8 +41,8 @@ class ReadmeYard
       end
 
       def warn_about_supported_markdown
-        Logger.warn "\n*Readme Yard* works best with markdown." \
-                    "\nConsider adding `--markup markdown` to your `.yardopts` file.\n\n"
+        Logger.warn "*Readme Yard* works best with markdown. " \
+                    "Consider adding `--markup markdown` to your `.yardopts` file."
       end
     end
   end

@@ -58,10 +58,10 @@ class ReadmeYard
     when "doc"
       readme_yard.doc(options: options)
     else
-      puts TTY::Markdown.parse(readme_yard.command_line_usage)
+      Logger.puts_md(readme_yard.command_line_usage)
     end
   rescue Error => e
-    puts TTY::Markdown.parse(e.message)
+    Logger.puts_md(e.message)
   end
 
   def initialize
@@ -160,9 +160,9 @@ class ReadmeYard
 
     if yard_tags.empty?
       if tag_class.respond_to?(:format_yard_object)
-        tag_class.format_yard_object(yard_object)
+        tag_class.format_yard_object(yard_object) || string
       else
-        warn_about_yard_tags_not_found(yard_object, tag_name)
+        Logger.warn("The `@#{tag_name}` tag is missing from `#{yard_object}`.")
         string
       end
     else
@@ -182,9 +182,5 @@ class ReadmeYard
     gem_spec = Gem::Specification.find_by_name("readme_yard")
     current_file_path = File.join(gem_spec.full_gem_path, "lib", "readme_yard.rb")
     YARD.parse(current_file_path)
-  end
-
-  def warn_about_yard_tags_not_found(yard_object, tag_name)
-    Logger.warn "The *Readme Yard* `@#{tag_name}` tag is missing from `#{yard_object}`"
   end
 end
