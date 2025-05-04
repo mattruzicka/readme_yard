@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReadmeYard
   #
   # @readme
@@ -14,9 +16,13 @@ class ReadmeYard
       #
       # @readme comment
       #
-      def format_tag_markdown(yard_object, _tag)
+      def format_tag(yard_object, _tag)
         comment = format_docstring_as_comment(yard_object)
         ExampleTag.format_ruby(comment)
+      end
+
+      def format_yard_object(yard_object)
+        format_tag(yard_object, nil)
       end
 
       #
@@ -32,12 +38,12 @@ class ReadmeYard
           comment << line
         end
         last_line = yard_object.docstring.all.lines.last
-        comment << "#" if last_line.match?(/\n$/)
+        comment << "#" if last_line&.match?(/\n$/)
         comment
       end
 
       def named_readme_tag_regex
-        @named_readme_tag_regex ||= /(\n|^)@readme\s(#{YARDReadme::DocstringParser.readme_tag_names.join("|")})\n/
+        @named_readme_tag_regex ||= /(\n|^)@readme\s(#{ReadmeYard::TagRegistry.tag_names.join("|")})\n/
       end
     end
   end

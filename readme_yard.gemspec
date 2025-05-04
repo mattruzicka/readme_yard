@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Build a better README with YARD."
   spec.homepage = "https://github.com/mattruzicka/readme_yard"
-  spec.required_ruby_version = ">= 2.5"
+  spec.required_ruby_version = ">= 3.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -22,12 +22,16 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
   end
 
-  spec.executables << "readme"
+  spec.bindir = "bin"
+  spec.executables = ["readme"]
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "tty-markdown", "~> 0.7"
-  spec.add_dependency "yard-readme", "~> 0.3"
+  spec.add_dependency "yard", "~> 0.9"
+  spec.add_dependency "yard-readme", "~> 0.5"
+
+  spec.add_development_dependency "irb"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
