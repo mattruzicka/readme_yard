@@ -8,12 +8,14 @@ class ReadmeYard
   #   embed behavior can be changed through the use of tag names.
   #
   # @see ReadmeYard::CommentTag
+  # @see ReadmeYard::CodeTag
   # @see ReadmeYard::SourceTag
-  # @see ReadmeYard::ObjectTag
+  # @see ReadmeYard::ValueTag
+  # @see ReadmeYard::StringTag
   #
   class ReadmeTag
     class << self
-      def format_markdown(yard_object, yard_tags)
+      def format_tags(yard_object, yard_tags)
         md = +""
         yard_tags.each do |tag|
           res = format_yard_tag(yard_object, tag)
@@ -22,7 +24,7 @@ class ReadmeYard
         md
       end
 
-      def format_tag_markdown(_yard_object, tag)
+      def format_tag(_yard_object, tag)
         "#{tag.text}\n"
       end
 
@@ -31,9 +33,9 @@ class ReadmeYard
       def format_yard_tag(yard_object, tag)
         if tag.name && !tag.name.empty?
           tag_class = TagRegistry.find_class(tag.name)
-          tag_class&.format_tag_markdown(yard_object, tag)
-        elsif tag.text && !tag.text.empty?
-          format_tag_markdown(yard_object, tag)
+          tag_class&.format_tag(yard_object, tag)
+        else
+          format_tag(yard_object, tag)
         end
       end
     end

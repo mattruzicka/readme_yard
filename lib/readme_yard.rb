@@ -9,8 +9,10 @@ require_relative "readme_yard/logger"
 require_relative "readme_yard/readme_tag"
 require_relative "readme_yard/example_tag"
 require_relative "readme_yard/comment_tag"
+require_relative "readme_yard/code_tag"
 require_relative "readme_yard/source_tag"
-require_relative "readme_yard/object_tag"
+require_relative "readme_yard/value_tag"
+require_relative "readme_yard/string_tag"
 require_relative "readme_yard/tag_registry"
 require_relative "readme_yard/yard_opts_manager"
 
@@ -85,7 +87,7 @@ class ReadmeYard
     yard_parse_this_file
     yard_object = YARD::Registry.at("#{self.class.name}##{__method__}")
     yard_tags = yard_object.tags(:readme)
-    "\n#{ReadmeTag.format_markdown(yard_object, yard_tags)}\n\n"
+    "\n#{ReadmeTag.format_tags(yard_object, yard_tags)}\n\n"
   end
 
   #
@@ -154,12 +156,17 @@ class ReadmeYard
 
   def format_yard_tags_markdown(yard_object, tag_name, string)
     yard_tags = yard_object.tags(tag_name)
+    tag_class = TagRegistry.find_class(tag_name)
+
     if yard_tags.empty?
-      warn_about_yard_tags_not_found(yard_object, tag_name)
-      string
+      if tag_class.respond_to?(:format_yard_object)
+        tag_class.format_yard_object(yard_object)
+      else
+        warn_about_yard_tags_not_found(yard_object, tag_name)
+        string
+      end
     else
-      tag_class = TagRegistry.find_class(tag_name)
-      tag_class.format_markdown(yard_object, yard_tags)
+      tag_class.format_tags(yard_object, yard_tags)
     end
   end
 
@@ -178,6 +185,6 @@ class ReadmeYard
   end
 
   def warn_about_yard_tags_not_found(yard_object, tag_name)
-    Logger.warn "The `@#{tag_name}` *Readme Yard* tag is missing from #{yard_object}."
+    Logger.warn "The *Readme Yard* `@#{tag_name}` tag is missing from `#{yard_object}`"
   end
 end

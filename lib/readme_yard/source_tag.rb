@@ -3,7 +3,7 @@
 class ReadmeYard
   #
   # @readme
-  #   Embed source code
+  #   Embed Ruby comments and code
   #
   # @example
   #   # @readme source
@@ -11,12 +11,19 @@ class ReadmeYard
   class SourceTag
     class << self
       #
-      # The following tag embeds this method's source.
+      # The comment and code for ReadmeYard::SourceTag#format_tag
+      # is in the README because `@readme source` is below (in the source code).
       #
       # @readme source
       #
-      def format_tag_markdown(yard_object, _tag)
-        ExampleTag.format_ruby(yard_object.source)
+      def format_tag(yard_object, _tag)
+        text = CommentTag.format_docstring_as_comment(yard_object)
+        text << "\n#{yard_object.source}"
+        ExampleTag.format_ruby(text)
+      end
+
+      def format_yard_object(yard_object)
+        format_tag(yard_object, nil)
       end
     end
   end
