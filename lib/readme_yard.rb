@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "yard"
 require "yard-readme"
 require "tty-markdown"
 require_relative "readme_yard/version"
