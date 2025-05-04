@@ -5,11 +5,14 @@ class ReadmeYard
   # @readme
   #   Embed a Ruby value as a Ruby code block
   #
+  # @example
+  #   # @readme value
+  #
   class ValueTag
     #
     # @readme value
     #
-    EXAMPLE_VALUE = { key: "value" }.freeze
+    EXAMPLE = { key: "value" }.freeze
 
     class << self
       def format_tag(yard_object, _tag)
