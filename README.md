@@ -1,6 +1,5 @@
 # Readme Yard 🌿
 [![Gem Version](https://badge.fury.io/rb/readme_yard.svg)](https://badge.fury.io/rb/readme_yard)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9fe0012930c3886dbe00/maintainability)](https://codeclimate.com/github/mattruzicka/readme_yard/maintainability)
 
 Build a better README with [YARD](https://yardoc.org)
 by generating it straight from the source.
@@ -32,6 +31,7 @@ I plan on implementing safeguards to prevent this kind of thing, but ultimately 
 - [Command Line Usage](#command-line-usage)
 - [Tag Usage](#tag-usage)
 - [Readme Tag](#readme-tag)
+- [Standalone Tag Usage](#standalone-tag-usage)
 - [Example Tag](#example-tag)
 - [Contributing](#contributing)
 
@@ -41,9 +41,11 @@ I plan on implementing safeguards to prevent this kind of thing, but ultimately 
 
 Add [gem "readme_yard"](https://rubygems.org/gems/readme_yard) to your Gemfile and run `bundle install` or install it yourself with: `gem install readme_yard`
 
+**Note:** As of version 0.3.0, Readme Yard requires Ruby 3.0 or higher.
+
 ## Getting Started
 
-Run `readme build` at the command line. This creates a README_YARD.md file if there isn’t one by copying your exisiting README.md file.
+Run `readme build` at the command line. This creates a README_YARD.md file if there isn't one by copying your existing README.md file.
 
 README_YARD.md is the template from which `readme build` generates the README. Readme Yard adds the ability to embed and reference your source code in your README via README_YARD.md.
 
@@ -68,9 +70,23 @@ Readme Yard uses YARD tags and custom markdown tags. YARD tags live inside Ruby 
 
 When the Readme Yard build process encounters a tag in README_YARD.md, it searches the Ruby source code for its YARD tag counterpart, formats the output, and embeds it in the README file.
 
+### Tag Reference Table
+
+| Tag Type | YARD Syntax (in source code) | Markdown Syntax (in README_YARD.md) | Purpose |
+|----------|------------------------------|-------------------------------------|---------|
+| Readme | `@readme` | `{@readme ObjectPath}` | General purpose tag to embed content from source code |
+| Readme (comment) | `@readme comment` | `{@comment ObjectPath}` | Embeds only the comment from source code |
+| Readme (code) | `@readme code` | `{@code ObjectPath}` | Embeds only code implementation |
+| Readme (source) | `@readme source` | `{@source ObjectPath}` | Embeds both comments and code |
+| Readme (value) | `@readme value` | `{@value ObjectPath}` | Embeds a Ruby value as a Ruby code block |
+| Readme (string) | `@readme string` | `{@string ObjectPath}` | Embeds a Ruby string as normal text |
+| Example | `@example` | `{@example ObjectPath}` | Embeds example code from YARD @example tags |
+
+> **Note:** For markdown tags that can be used without corresponding YARD tags in source code, see [Standalone Tag Usage](#standalone-tag-usage).
+
 ### Examples
 
-The next line is a code snippet if you’re looking at [README.md](https://github.com/mattruzicka/README/blob/main/README_YARD.md) and `{@readme ReadmeYard.hello_world}` if you’re looking at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md).
+The next line is a code snippet if you're looking at [README.md](https://github.com/mattruzicka/README/blob/main/README_YARD.md) and `{@readme ReadmeYard.hello_world}` if you're looking at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md).
 
 ```ruby
 #
@@ -112,7 +128,7 @@ Example usage:
 ```
 
 
-This example ["@readme comment" tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/comment_tag.rb) embeds the below code snippet via the `{@readme ReadmeYard::CommentTag.format_tag_markdown}` markdown tag.
+This example [@readme comment](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/comment_tag.rb) tag embeds the below code snippet via the `{@readme ReadmeYard::CommentTag.format_tag}` markdown tag.
 
 ```ruby
 #
@@ -122,7 +138,26 @@ This example ["@readme comment" tag](https://github.com/mattruzicka/readme_yard/
 ```
 
 
-### Embed source code
+### Embed Ruby code
+
+
+Example usage:
+
+```ruby
+# @readme code
+```
+
+
+This example [@readme code](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/code_tag.rb) tag embeds the below code snippet via the `{@readme ReadmeYard::CodeTag.format_tag}` markdown tag.
+
+```ruby
+def format_tag(yard_object, _tag)
+  ExampleTag.format_ruby(yard_object.source)
+end
+```
+
+
+### Embed Ruby comments and code
 
 
 Example usage:
@@ -132,33 +167,14 @@ Example usage:
 ```
 
 
-This example ["@readme source" tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/source_tag.rb) embeds the below code snippet via the `{@readme ReadmeYard::SourceTag.format_tag_markdown}` markdown tag.
-
-```ruby
-def format_tag_markdown(yard_object, _tag)
-  ExampleTag.format_ruby(yard_object.source)
-end
-```
-
-
-### Embed comments and source code
-
-
-Example usage:
-
-```ruby
-# @readme object
-```
-
-
-This example ["@readme object" tag](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/object_tag.rb) embeds the below code snippet via the `{@readme ReadmeYard::ObjectTag.format_tag_markdown}` markdown tag.
+This example [@readme source](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/source_tag.rb) tag embeds the below code snippet via the `{@readme ReadmeYard::SourceTag.format_tag}` markdown tag.
 
 ```ruby
 #
-# This method's comment and code is in the README because
-# `@readme object` is below (in the source code).
+# The comment and code for ReadmeYard::SourceTag#format_tag
+# is in the README because `@readme source` is below (in the source code).
 #
-def format_tag_markdown(yard_object, _tag)
+def format_tag(yard_object, _tag)
   text = CommentTag.format_docstring_as_comment(yard_object)
   text << "\n#{yard_object.source}"
   ExampleTag.format_ruby(text)
@@ -166,6 +182,68 @@ end
 ```
 
 
+### Embed a Ruby value as a Ruby code block
+
+
+Example usage:
+
+```ruby
+# @readme value
+```
+
+
+This example [@readme value](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/value_tag.rb) tag embeds the below code snippet via the `{@value ReadmeYard::ValueTag::EXAMPLE}` markdown tag.
+
+```ruby
+{ key: "value" }.freeze
+```
+
+### Embed a Ruby string as normal text
+
+
+Example usage:
+
+Because a [@readme string](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/string_tag.rb) tag:
+
+```ruby
+# @readme string
+```
+
+
+Is located above this constant:
+
+```ruby
+XZAMPLE = <<~STRING
+  I heard you like self-documenting Ruby, so I wrote
+  self-documenting Ruby for your self-documenting Ruby.
+STRING
+```
+
+
+We see can see its string value as simple text below:
+
+I heard you like self-documenting Ruby, so I wrote
+self-documenting Ruby for your self-documenting Ruby.
+
+---
+
+## Standalone Tag Usage
+
+While using the `@readme` tag in your source code is recommended because it makes the README's dependency on source code explicit, sometimes it's useful to embed source code snippets directly without it. This is especially valuable when a source object can only contain one `@readme` tag, but you want to highlight multiple aspects of the object.
+
+You can use any of these tags directly in README_YARD.md without requiring a corresponding `@readme` tag in the source code:
+
+- `{@comment ObjectPath}` - Embeds comments only
+- `{@code ObjectPath}` - Embeds code only
+- `{@source ObjectPath}` - Embeds both comments and code
+- `{@value ObjectPath}` - Embeds a Ruby value as a Ruby code block
+- `{@string ObjectPath}` - Embeds a Ruby string as plain text
+
+For example, in the StringTag section above, we used both:
+- `{@code ReadmeYard::StringTag::XZAMPLE}` to show the constant definition
+- `{@string ReadmeYard::StringTag::XZAMPLE}` to display the string value as text
+
+The standalone tag usage provides more flexibility when documenting your code and doesn't require modifications to the source files.
 
 ---
 

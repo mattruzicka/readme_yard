@@ -1,4 +1,14 @@
-## [Unreleased]
+## 0.3.0 - 2025-05-04
+
+- Update dependencies: upgraded yard-readme to 0.5.0, Ruby requirement to >= 3.0
+- Add TagRegistry class to centralize tag management
+- Update bundler and various gem dependencies
+- Improve command-line argument handling in the readme executable
+- Extract YardOptsManager to improve code organization
+- Rename ObjectTag to SourceTag and rename old SourceTag to CodeTag
+- Add new ValueTag and StringTag
+- Add standalone tag support: enable embedding yard content in README without yard tags in the source code
+- Rename format methods for consistency
 
 ## 0.2.0 - 2021-08-08
 
