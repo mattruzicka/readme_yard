@@ -1,3 +1,4 @@
 --plugin readme
 --markup markdown
+--readme README.md
 lib/**/*.rb
