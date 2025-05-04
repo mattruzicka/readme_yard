@@ -34,8 +34,10 @@ class ReadmeYard
         if tag.name && !tag.name.empty?
           tag_class = TagRegistry.find_class(tag.name)
           tag_class&.format_tag(yard_object, tag)
-        else
+        elsif tag.text && !tag.text.empty?
           format_tag(yard_object, tag)
+        else
+          Logger.warn("Empty `@readme` tag found in `#{yard_object}`.")
         end
       end
     end
