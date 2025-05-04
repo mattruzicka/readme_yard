@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "tty-markdown", "~> 0.7"
   spec.add_dependency "yard", "~> 0.9"
-  spec.add_dependency "yard-readme", "~> 0.4"
+  spec.add_dependency "yard-readme", "~> 0.5"
 
   spec.add_development_dependency "irb"
 
