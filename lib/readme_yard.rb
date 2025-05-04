@@ -37,7 +37,7 @@ YARD::Readme::DocstringParser.readme_tag_names = ReadmeYard::TagRegistry.tag_nam
 #
 class ReadmeYard
   #
-  # @readme object
+  # @readme source
   #
   # @example
   #   ReadmeYard.hello_world #=> "Hello 🌎 🌍 🌏"
