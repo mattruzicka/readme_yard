@@ -6,7 +6,10 @@ by generating it straight from the source.
 
 This gem aims to minimize the effort needed to keep your
 README, documentation, and source code synced, useful,
-and correct.
+and correct. Among its features, it introduces the @readme tag
+that enables you to embed code comments directly into README sections,
+eliminating redundancy and keeping documentation consistent
+across your codebase and project README.
 
 Look at the [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md)
 template for this project to see how it works.
@@ -19,9 +22,13 @@ Here's the [full documentation](https://rubydoc.info/github/mattruzicka/readme_y
 
 ---
 
-⚠️ **It's tempting to accidentally edit README.md instead of README_YARD.md and lose your changes** by running `readme build`.
+⚠️ **Generated file warning** – Edit README_YARD.md, not README.md. Changes to README.md will be lost when running `readme build`.
 
-I plan on implementing safeguards to prevent this kind of thing, but ultimately I want to support editing the README directly. One idea is to leverage git in order to merge README.md changes into the relevant source code and README_YARD.md sections. The README_YARD.md file basically acts as a translation layer between your source code and README, so it can theoretically be used to generate changes both ways. I also think it could be used to keep state, like edit history, for implementing safeguards and awesome features. [PRs are welcome](#contributing); Feel free to reach out 🙂.
+### Future Work
+- Implement safeguards to prevent accidental edits to README.md
+- Support bidirectional editing through git integration
+
+[PRs are welcome](#contributing) for these improvements.
 
 ---
 
@@ -72,17 +79,17 @@ When the Readme Yard build process encounters a tag in README_YARD.md, it search
 
 ### Tag Reference Table
 
-| Tag Type | YARD Syntax (in source code) | Markdown Syntax (in README_YARD.md) | Purpose |
-|----------|------------------------------|-------------------------------------|---------|
-| Readme | `@readme` | `{@readme ObjectPath}` | General purpose tag to embed content from source code |
-| Readme (comment) | `@readme comment` | `{@comment ObjectPath}` | Embeds only the comment from source code |
-| Readme (code) | `@readme code` | `{@code ObjectPath}` | Embeds only code implementation |
-| Readme (source) | `@readme source` | `{@source ObjectPath}` | Embeds both comments and code |
-| Readme (value) | `@readme value` | `{@value ObjectPath}` | Embeds a Ruby value as a Ruby code block |
-| Readme (string) | `@readme string` | `{@string ObjectPath}` | Embeds a Ruby string as normal text |
-| Example | `@example` | `{@example ObjectPath}` | Embeds example code from YARD @example tags |
+| Tag Type | YARD Syntax (in source code) | Markdown Syntax (in README_YARD.md) | Standalone Tag* | Purpose |
+|----------|------------------------------|-------------------------------------|----------------|---------|
+| Readme | `@readme` | `{@readme ObjectPath}` | N/A | General purpose tag to embed content from source code |
+| Readme (comment) | `@readme comment` | `{@readme ObjectPath}` | `{@comment ObjectPath}` | Embeds only the comment from source code |
+| Readme (code) | `@readme code` | `{@readme ObjectPath}` | `{@code ObjectPath}` | Embeds only code implementation |
+| Readme (source) | `@readme source` | `{@readme ObjectPath}` | `{@source ObjectPath}` | Embeds both comments and code |
+| Readme (value) | `@readme value` | `{@readme ObjectPath}` | `{@value ObjectPath}` | Embeds a Ruby value as a Ruby code block |
+| Readme (string) | `@readme string` | `{@readme ObjectPath}` | `{@string ObjectPath}` | Embeds a Ruby string as normal text |
+| Example | `@example` | `{@example ObjectPath}` | N/A | Embeds example code from YARD @example tags |
 
-> **Note:** For markdown tags that can be used without corresponding YARD tags in source code, see [Standalone Tag Usage](#standalone-tag-usage).
+> *Standalone tags allow embedding content without requiring corresponding YARD tags in source code. See [Standalone Tag Usage](#standalone-tag-usage) for details.
 
 ### Examples
 

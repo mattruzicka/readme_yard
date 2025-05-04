@@ -25,7 +25,10 @@ YARD::Readme::DocstringParser.readme_tag_names = ReadmeYard::TagRegistry.tag_nam
 #
 #   This gem aims to minimize the effort needed to keep your
 #   README, documentation, and source code synced, useful,
-#   and correct.
+#   and correct. Among its features, it introduces the @readme tag
+#   that enables you to embed code comments directly into README sections,
+#   eliminating redundancy and keeping documentation consistent
+#   across your codebase and project README.
 #
 #   Look at the [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md)
 #   template for this project to see how it works.
