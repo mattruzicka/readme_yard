@@ -69,11 +69,11 @@ When the Readme Yard build process encounters a tag in README_YARD.md, it search
 
 ### Examples
 
-The next line is a code snippet if you're looking at [README.md](https://github.com/mattruzicka/README/blob/main/README_YARD.md) and `{@readme ReadmeYard.hello_world}` if you're looking at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md).
+The next line is a code snippet if you're looking at [README.md](https://github.com/mattruzicka/README/blob/main/README_YARD.md) and `{@readme ReadmeYard::ExampleTag.hello_world}` if you're looking at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md).
 
-{@readme ReadmeYard.hello_world}
+{@readme ReadmeYard::ExampleTag.hello_world}
 
-The markdown tag tells Readme Yard to parse the `@readme` tag located above the `hello_world` class method located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
+The markdown tag tells Readme Yard to parse the `@readme` tag located above the `hello_world` class method located in [lib/readme_yard/example_tag.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/example_tag.rb).
 
 To use another "meta" example, `{@readme ReadmeYard}` is used at the top of this project's README_YARD.md file to generate the first few sentences of this README. `ReadmeYard` references the class located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
 
@@ -91,7 +91,7 @@ Last one, `{@readme ReadmeYard#command_line_usage}` is used to generate the "Com
 
 ### {@readme ReadmeYard::CommentTag}
 
-Example usage:
+**Usage:**
 
 {@example ReadmeYard::CommentTag}
 
@@ -101,7 +101,7 @@ This example [@readme comment](https://github.com/mattruzicka/readme_yard/blob/m
 
 ### {@readme ReadmeYard::CodeTag}
 
-Example usage:
+**Usage:**
 
 {@example ReadmeYard::CodeTag}
 
@@ -111,7 +111,7 @@ This example [@readme code](https://github.com/mattruzicka/readme_yard/blob/main
 
 ### {@readme ReadmeYard::SourceTag}
 
-Example usage:
+**Usage:**
 
 {@example ReadmeYard::SourceTag}
 
@@ -121,7 +121,7 @@ This example [@readme source](https://github.com/mattruzicka/readme_yard/blob/ma
 
 ### {@readme ReadmeYard::ValueTag}
 
-Example usage:
+**Usage:**
 
 {@example ReadmeYard::ValueTag}
 
@@ -131,7 +131,7 @@ This example [@readme value](https://github.com/mattruzicka/readme_yard/blob/mai
 
 ### {@readme ReadmeYard::StringTag}
 
-Example usage:
+**Usage:**
 
 Because a [@readme string](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/string_tag.rb) tag:
 
@@ -173,11 +173,15 @@ The standalone tag usage provides more flexibility when documenting your code an
 
 **YARD** syntax: `@example`
 
-{@source ReadmeYard.hello_world}
+{@readme ReadmeYard::ExampleTag}
 
-The below example code is generated from `{@example ReadmeYard.hello_world}` because, as you can see above, the "hello_world" class method has an `@example` tag.
+**Usage:**
 
-{@example ReadmeYard.hello_world}
+{@source ReadmeYard::ExampleTag.hello_world}
+
+The below example code is generated from `{@example ReadmeYard::ExampleTag.hello_world}` because, as you can see above, the "hello_world" class method has an `@example` tag.
+
+{@example ReadmeYard::ExampleTag.hello_world}
 
 ---
 

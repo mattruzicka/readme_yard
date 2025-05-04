@@ -93,20 +93,20 @@ When the Readme Yard build process encounters a tag in README_YARD.md, it search
 
 ### Examples
 
-The next line is a code snippet if you're looking at [README.md](https://github.com/mattruzicka/README/blob/main/README_YARD.md) and `{@readme ReadmeYard.hello_world}` if you're looking at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md).
+The next line is a code snippet if you're looking at [README.md](https://github.com/mattruzicka/README/blob/main/README_YARD.md) and `{@readme ReadmeYard::ExampleTag.hello_world}` if you're looking at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md).
 
 ```ruby
 #
 # @example
-#   ReadmeYard.hello_world #=> "Hello 🌎 🌍 🌏"
+#   ReadmeYard::ExampleTag.hello_world #=> "Hello 🌎 🌍 🌏"
 #
-def self.hello_world
+def hello_world
   "Hello 🌎 🌍 🌏"
 end
 ```
 
 
-The markdown tag tells Readme Yard to parse the `@readme` tag located above the `hello_world` class method located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
+The markdown tag tells Readme Yard to parse the `@readme` tag located above the `hello_world` class method located in [lib/readme_yard/example_tag.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/example_tag.rb).
 
 To use another "meta" example, `{@readme ReadmeYard}` is used at the top of this project's README_YARD.md file to generate the first few sentences of this README. `ReadmeYard` references the class located in [lib/readme_yard.rb](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard.rb).
 
@@ -128,7 +128,7 @@ embed behavior can be changed through the use of tag names.
 ### Embed comments
 
 
-Example usage:
+**Usage:**
 
 ```ruby
 # @readme comment
@@ -148,7 +148,7 @@ This example [@readme comment](https://github.com/mattruzicka/readme_yard/blob/m
 ### Embed Ruby code
 
 
-Example usage:
+**Usage:**
 
 ```ruby
 # @readme code
@@ -167,7 +167,7 @@ end
 ### Embed Ruby comments and code
 
 
-Example usage:
+**Usage:**
 
 ```ruby
 # @readme source
@@ -192,7 +192,7 @@ end
 ### Embed a Ruby value as a Ruby code block
 
 
-Example usage:
+**Usage:**
 
 ```ruby
 # @readme value
@@ -208,7 +208,7 @@ This example [@readme value](https://github.com/mattruzicka/readme_yard/blob/mai
 ### Embed a Ruby string as normal text
 
 
-Example usage:
+**Usage:**
 
 Because a [@readme string](https://github.com/mattruzicka/readme_yard/blob/main/lib/readme_yard/string_tag.rb) tag:
 
@@ -260,21 +260,28 @@ The standalone tag usage provides more flexibility when documenting your code an
 
 **YARD** syntax: `@example`
 
+The Example Tag leverages YARD's standard `@example` tag syntax, allowing you to
+include example code in your README directly from source files. This saves time and
+ensures your README stays in sync with your YARD documentation
+
+
+**Usage:**
+
 ```ruby
 #
 # @example
-#   ReadmeYard.hello_world #=> "Hello 🌎 🌍 🌏"
+#   ReadmeYard::ExampleTag.hello_world #=> "Hello 🌎 🌍 🌏"
 #
-def self.hello_world
+def hello_world
   "Hello 🌎 🌍 🌏"
 end
 ```
 
 
-The below example code is generated from `{@example ReadmeYard.hello_world}` because, as you can see above, the "hello_world" class method has an `@example` tag.
+The below example code is generated from `{@example ReadmeYard::ExampleTag.hello_world}` because, as you can see above, the "hello_world" class method has an `@example` tag.
 
 ```ruby
-ReadmeYard.hello_world #=> "Hello 🌎 🌍 🌏"
+ReadmeYard::ExampleTag.hello_world #=> "Hello 🌎 🌍 🌏"
 ```
 
 

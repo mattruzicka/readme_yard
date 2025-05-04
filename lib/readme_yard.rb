@@ -40,16 +40,6 @@ YARD::Readme::DocstringParser.readme_tag_names = ReadmeYard::TagRegistry.tag_nam
 #
 class ReadmeYard
   #
-  # @readme source
-  #
-  # @example
-  #   ReadmeYard.hello_world #=> "Hello 🌎 🌍 🌏"
-  #
-  def self.hello_world
-    "Hello 🌎 🌍 🌏"
-  end
-
-  #
   # @see #command_line_usage
   #
   def self.call(arg, options)
