@@ -93,7 +93,7 @@ When the Readme Yard build process encounters a tag in README_YARD.md, it search
 
 ### Examples
 
-The next line is a code snippet if you're looking at [README.md](https://github.com/mattruzicka/README/blob/main/README_YARD.md) and `{@readme ReadmeYard::ExampleTag.hello_world}` if you're looking at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md).
+The next line is a code snippet if you're looking at the [README](https://github.com/mattruzicka/readme_yard/blob/main/README.md) and `{@readme ReadmeYard::ExampleTag.hello_world}` if you're looking at [README_YARD.md](https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md).
 
 ```ruby
 #
@@ -291,8 +291,4 @@ ReadmeYard::ExampleTag.hello_world #=> "Hello 🌎 🌍 🌏"
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mattruzicka/yard-readme.
 
-If you're interested in contributing, but don't know where to get started, feel free to message me on twitter at [@mattruzicka](https://twitter.com/mattruzicka). I have a lot of ideas!
-
-Thanks for taking the time to think about me, the README.
-
-🌿 🥏 🌱 ⚽
+Thanks for reading me, the README that documents how to document the README with code that documents itself 🤯
