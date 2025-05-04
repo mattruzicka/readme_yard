@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReadmeYard
   class Error < StandardError
     class << self

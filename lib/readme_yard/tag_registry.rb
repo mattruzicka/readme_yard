@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReadmeYard
   class TagRegistry
     TAGS = { "readme" => ReadmeTag,

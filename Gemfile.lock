@@ -9,28 +9,55 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.3)
     date (3.4.1)
     io-console (0.8.0)
     irb (1.15.2)
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    json (2.11.3)
     kramdown (2.5.1)
       rexml (>= 3.3.9)
+    language_server-protocol (3.17.0.4)
+    lint_roller (1.1.0)
+    parallel (1.27.0)
+    parser (3.3.8.0)
+      ast (~> 2.4.1)
+      racc
     pastel (0.8.0)
       tty-color (~> 0.5)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
+    prism (1.4.0)
     psych (5.2.4)
       date
       stringio
+    racc (1.8.1)
+    rainbow (3.1.1)
     rdoc (6.13.1)
       psych (>= 4.0.0)
+    regexp_parser (2.10.0)
     reline (0.6.1)
       io-console (~> 0.5)
     rexml (3.4.1)
     rouge (4.5.2)
+    rubocop (1.75.4)
+      json (~> 2.3)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
+      parallel (~> 1.10)
+      parser (>= 3.3.0.2)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.44.1)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
+    ruby-progressbar (1.13.0)
     stringio (3.1.7)
     strings (0.2.1)
       strings-ansi (~> 0.2)
@@ -58,6 +85,8 @@ PLATFORMS
 DEPENDENCIES
   irb
   readme_yard!
+  rubocop (~> 1.75, >= 1.75.4)
+  yard-readme (~> 0.4)
 
 BUNDLED WITH
    2.6.8
