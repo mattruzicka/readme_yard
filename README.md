@@ -68,6 +68,8 @@ See [Tag Usage](#tag-usage).
 
 `readme yard` - Same as `readme build` + generates yard docs.
 
+`readme version` - Prints the current version of ReadmeYard.
+
 
 ---
 

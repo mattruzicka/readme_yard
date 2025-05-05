@@ -50,6 +50,8 @@ class ReadmeYard
       readme_yard.build(options: options)
     when "yard"
       readme_yard.yard(options: options)
+    when "version"
+      Logger.puts_md(VERSION)
     else
       Logger.puts_md(readme_yard.command_line_usage)
     end
@@ -65,7 +67,9 @@ class ReadmeYard
   attr_accessor :readme_path, :readme_yard_path
 
   #
-  # This method returns the following `@readme` text
+  # This unnecessarily meta method returns the `@readme` text you see
+  # below (if you're reading this in the source code). It was implemented
+  # just for fun as a demonstration of @readme tags.
   #
   # @readme
   #   ## Command Line Usage
@@ -75,6 +79,8 @@ class ReadmeYard
   #   `readme build` - Reads from README_YARD.md and writes to README.md.
   #
   #   `readme yard` - Same as `readme build` + generates yard docs.
+  #
+  #   `readme version` - Prints the current version of ReadmeYard.
   #
   def command_line_usage
     yard_parse_this_file
