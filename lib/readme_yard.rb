@@ -15,6 +15,7 @@ require_relative "readme_yard/value_tag"
 require_relative "readme_yard/string_tag"
 require_relative "readme_yard/tag_registry"
 require_relative "readme_yard/yard_opts_manager"
+require "diffy"
 
 YARD::Readme::DocstringParser.readme_tag_names = ReadmeYard::TagRegistry.tag_names
 
@@ -101,7 +102,10 @@ class ReadmeYard
   #
   def build(options: "-nq")
     YARD::CLI::Yardoc.run(options || "-nq")
-    File.write(readme_path, gsub_tags!(readme_yard_md))
+    old_readme = File.exist?(readme_path) ? File.read(readme_path) : ""
+    new_readme = gsub_tags!(readme_yard_md)
+    File.write(readme_path, new_readme)
+    show_readme_diff(old_readme, new_readme)
   end
 
   #
@@ -181,5 +185,16 @@ class ReadmeYard
     gem_spec = Gem::Specification.find_by_name("readme_yard")
     current_file_path = File.join(gem_spec.full_gem_path, "lib", "readme_yard.rb")
     YARD.parse(current_file_path)
+  end
+
+  def show_readme_diff(old_content, new_content)
+    if old_content == new_content
+      Logger.puts_md("\n**No changes** to README.md\n\n")
+      return
+    end
+
+    diff = Diffy::Diff.new(old_content, new_content, context: 0).to_s(:color)
+    Logger.puts_md("\n**Changes to README.md:**\n\n")
+    Logger.puts_text "#{diff}\n"
   end
 end

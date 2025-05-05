@@ -11,6 +11,10 @@ class ReadmeYard
       def puts_md(msg)
         puts TTY::Markdown.parse(msg)
       end
+
+      def puts_text(msg)
+        puts msg
+      end
     end
   end
 end

@@ -1,3 +1,7 @@
+## 0.4.0 - unreleased
+
+- Added colored diff output when readme build/yard commands finish, showing changes to README.md using the Diffy gem
+
 ## 0.3.0 - 2025-05-04
 
 - Update dependencies: upgraded yard-readme to 0.5.0, Ruby requirement to >= 3.0
