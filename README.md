@@ -19,8 +19,6 @@ If you're reading the README, that means this text is here
 because the custom `{@readme ReadmeYard}` markdown tag is in
 README_YARD.md and `readme build` was run at the command line.
 
-Here's the [full documentation](https://rubydoc.info/github/mattruzicka/readme_yard).
-
 
 ---
 
@@ -43,6 +41,7 @@ Here's the [full documentation](https://rubydoc.info/github/mattruzicka/readme_y
 - [Standalone Tag Usage](#standalone-tag-usage)
 - [Example Tag](#example-tag)
 - [Contributing](#contributing)
+- [Documentation](https://mattruzicka.github.io/readme_yard/)
 
 ---
 

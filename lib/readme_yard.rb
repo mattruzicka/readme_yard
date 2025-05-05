@@ -37,8 +37,6 @@ YARD::Readme::DocstringParser.readme_tag_names = ReadmeYard::TagRegistry.tag_nam
 #   because the custom `{@readme ReadmeYard}` markdown tag is in
 #   README_YARD.md and `readme build` was run at the command line.
 #
-#   Here's the [full documentation](https://rubydoc.info/github/mattruzicka/readme_yard).
-#
 class ReadmeYard
   #
   # @see #command_line_usage
