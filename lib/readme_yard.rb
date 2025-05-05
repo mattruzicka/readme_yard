@@ -109,11 +109,11 @@ class ReadmeYard
   end
 
   #
-  # @readme Same as "build" + generates yard docs.
+  # @readme Same as "build" + generates yard `docs.
   #
-  def yard(options: "-q")
+  def yard(options: "")
     YardOptsManager.upsert_yardopts
-    build(options: options || "-q")
+    build(options: options || "")
   end
 
   private

@@ -1,6 +1,7 @@
 ## 0.4.0 - unreleased
 
 - Added colored diff output when readme build/yard commands finish, showing changes to README.md using the Diffy gem
+- Changed default options for `readme yard` command to display YARD doc stats
 
 ## 0.3.0 - 2025-05-04
 
