@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: ReadmeYard
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ReadmeYard";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (R)</a> &raquo;
+    
+    
+    <span class="title">ReadmeYard</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: ReadmeYard
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ReadmeYard</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/readme_yard.rb<span class="defines">,<br />
+  lib/readme_yard/error.rb,<br /> lib/readme_yard/logger.rb,<br /> lib/readme_yard/version.rb,<br /> lib/readme_yard/code_tag.rb,<br /> lib/readme_yard/value_tag.rb,<br /> lib/readme_yard/readme_tag.rb,<br /> lib/readme_yard/source_tag.rb,<br /> lib/readme_yard/string_tag.rb,<br /> lib/readme_yard/comment_tag.rb,<br /> lib/readme_yard/example_tag.rb,<br /> lib/readme_yard/tag_registry.rb,<br /> lib/readme_yard/yard_opts_manager.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Build a better README with <a href="https://yardoc.org">YARD</a>
+by generating it straight from the source.</p>
+
+<p>This gem aims to minimize the effort needed to keep your
+README, documentation, and source code synced, useful,
+and correct. Among its features, it introduces the @readme tag
+that enables you to embed code comments directly into README sections,
+eliminating redundancy and keeping documentation consistent
+across your codebase and project README.</p>
+
+<p>Look at the <a href="https://github.com/mattruzicka/readme_yard/blob/main/README_YARD.md">README_YARD.md</a>
+template for this project to see how it works.
+If you’re reading the README, that means this text is here
+because the custom <code>{@readme ReadmeYard}</code> markdown tag is in
+README_YARD.md and <code>readme build</code> was run at the command line.</p>
+
+<p>Here’s the <a href="https://rubydoc.info/github/mattruzicka/readme_yard">full documentation</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ReadmeYard/CodeTag.html" title="ReadmeYard::CodeTag (class)">CodeTag</a></span>, <span class='object_link'><a href="ReadmeYard/CommentTag.html" title="ReadmeYard::CommentTag (class)">CommentTag</a></span>, <span class='object_link'><a href="ReadmeYard/Error.html" title="ReadmeYard::Error (class)">Error</a></span>, <span class='object_link'><a href="ReadmeYard/ExampleTag.html" title="ReadmeYard::ExampleTag (class)">ExampleTag</a></span>, <span class='object_link'><a href="ReadmeYard/Logger.html" title="ReadmeYard::Logger (class)">Logger</a></span>, <span class='object_link'><a href="ReadmeYard/ReadmeTag.html" title="ReadmeYard::ReadmeTag (class)">ReadmeTag</a></span>, <span class='object_link'><a href="ReadmeYard/SourceTag.html" title="ReadmeYard::SourceTag (class)">SourceTag</a></span>, <span class='object_link'><a href="ReadmeYard/StringTag.html" title="ReadmeYard::StringTag (class)">StringTag</a></span>, <span class='object_link'><a href="ReadmeYard/TagRegistry.html" title="ReadmeYard::TagRegistry (class)">TagRegistry</a></span>, <span class='object_link'><a href="ReadmeYard/ValueTag.html" title="ReadmeYard::ValueTag (class)">ValueTag</a></span>, <span class='object_link'><a href="ReadmeYard/YardOptsManager.html" title="ReadmeYard::YardOptsManager (class)">YardOptsManager</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.4.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readme_path-instance_method" title="#readme_path (instance method)">#<strong>readme_path</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute readme_path.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#readme_yard_path-instance_method" title="#readme_yard_path (instance method)">#<strong>readme_yard_path</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute readme_yard_path.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#call-class_method" title="call (class method)">.<strong>call</strong>(arg, options)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build-instance_method" title="#build (instance method)">#<strong>build</strong>(options: &quot;-nq&quot;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Reads from README_YARD.md and writes to README.md.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#command_line_usage-instance_method" title="#command_line_usage (instance method)">#<strong>command_line_usage</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>This unnecessarily meta method returns the <code>@readme</code> text you see below (if you’re reading this in the source code).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>  &#x21d2; ReadmeYard </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of ReadmeYard.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#yard-instance_method" title="#yard (instance method)">#<strong>yard</strong>(options: &quot;&quot;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Same as “build” + generates yard `docs.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="ReadmeYard (class)">ReadmeYard</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a new instance of ReadmeYard.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='ivar'>@readme_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./README.md</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@readme_yard_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./README_YARD.md</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="readme_path=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="readme_path-instance_method">
+  
+    #<strong>readme_path</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute readme_path.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_readme_path'>readme_path</span>
+  <span class='ivar'>@readme_path</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="readme_yard_path=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="readme_yard_path-instance_method">
+  
+    #<strong>readme_yard_path</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute readme_yard_path.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_readme_yard_path'>readme_yard_path</span>
+  <span class='ivar'>@readme_yard_path</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="call-class_method">
+  
+    .<strong>call</strong>(arg, options)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#command_line_usage-instance_method" title="ReadmeYard#command_line_usage (method)">#command_line_usage</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard.rb', line 46</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_arg'>arg</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_readme_yard'>readme_yard</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="ReadmeYard (class)">ReadmeYard</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="ReadmeYard#initialize (method)">new</a></span></span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_arg'>arg</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>build</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_readme_yard'>readme_yard</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='label'>options:</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>yard</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_readme_yard'>readme_yard</span><span class='period'>.</span><span class='id identifier rubyid_yard'>yard</span><span class='lparen'>(</span><span class='label'>options:</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>version</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'><span class='object_link'><a href="ReadmeYard/Logger.html" title="ReadmeYard::Logger (class)">Logger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_puts_md'><span class='object_link'><a href="ReadmeYard/Logger.html#puts_md-class_method" title="ReadmeYard::Logger.puts_md (method)">puts_md</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#VERSION-constant" title="ReadmeYard::VERSION (constant)">VERSION</a></span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='const'><span class='object_link'><a href="ReadmeYard/Logger.html" title="ReadmeYard::Logger (class)">Logger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_puts_md'><span class='object_link'><a href="ReadmeYard/Logger.html#puts_md-class_method" title="ReadmeYard::Logger.puts_md (method)">puts_md</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_readme_yard'>readme_yard</span><span class='period'>.</span><span class='id identifier rubyid_command_line_usage'>command_line_usage</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ReadmeYard/Error.html" title="ReadmeYard::Error (class)">Error</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='const'><span class='object_link'><a href="ReadmeYard/Logger.html" title="ReadmeYard::Logger (class)">Logger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_puts_md'><span class='object_link'><a href="ReadmeYard/Logger.html#puts_md-class_method" title="ReadmeYard::Logger.puts_md (method)">puts_md</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="build-instance_method">
+  
+    #<strong>build</strong>(options: &quot;-nq&quot;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Reads from README_YARD.md and writes to README.md</p>
+
+<p>Forwards options to yardoc</p>
+
+<p><code>-n</code> only generate .yardoc database, no documentation.</p>
+
+<p><code>-q</code> silence yardoc output statements</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106
+107
+108
+109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='label'>options:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-nq</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='const'>YARD</span><span class='op'>::</span><span class='const'>CLI</span><span class='op'>::</span><span class='const'>Yardoc</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-nq</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_old_readme'>old_readme</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exist?'>exist?</span><span class='lparen'>(</span><span class='id identifier rubyid_readme_path'>readme_path</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_readme_path'>readme_path</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_new_readme'>new_readme</span> <span class='op'>=</span> <span class='id identifier rubyid_gsub_tags!'>gsub_tags!</span><span class='lparen'>(</span><span class='id identifier rubyid_readme_yard_md'>readme_yard_md</span><span class='rparen'>)</span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_readme_path'>readme_path</span><span class='comma'>,</span> <span class='id identifier rubyid_new_readme'>new_readme</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_show_readme_diff'>show_readme_diff</span><span class='lparen'>(</span><span class='id identifier rubyid_old_readme'>old_readme</span><span class='comma'>,</span> <span class='id identifier rubyid_new_readme'>new_readme</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="command_line_usage-instance_method">
+  
+    #<strong>command_line_usage</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>This unnecessarily meta method returns the <code>@readme</code> text you see
+below (if you’re reading this in the source code). It was implemented
+just for fun as a demonstration of @readme tags.</p>
+
+<h2 id="command-line-usage">Command Line Usage</h2>
+
+<p><code>readme</code> - Prints command line usage.</p>
+
+<p><code>readme build</code> - Reads from README_YARD.md and writes to README.md.</p>
+
+<p><code>readme yard</code> - Same as <code>readme build</code> + generates yard docs.</p>
+
+<p><code>readme version</code> - Prints the current version of ReadmeYard.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+86
+87
+88
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard.rb', line 86</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_command_line_usage'>command_line_usage</span>
+  <span class='id identifier rubyid_yard_parse_this_file'>yard_parse_this_file</span>
+  <span class='id identifier rubyid_yard_object'>yard_object</span> <span class='op'>=</span> <span class='const'>YARD</span><span class='op'>::</span><span class='const'>Registry</span><span class='period'>.</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>#</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid___method__'>__method__</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_yard_tags'>yard_tags</span> <span class='op'>=</span> <span class='id identifier rubyid_yard_object'>yard_object</span><span class='period'>.</span><span class='id identifier rubyid_tags'>tags</span><span class='lparen'>(</span><span class='symbol'>:readme</span><span class='rparen'>)</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="ReadmeYard/ReadmeTag.html" title="ReadmeYard::ReadmeTag (class)">ReadmeTag</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_tags'><span class='object_link'><a href="ReadmeYard/ReadmeTag.html#format_tags-class_method" title="ReadmeYard::ReadmeTag.format_tags (method)">format_tags</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_yard_object'>yard_object</span><span class='comma'>,</span> <span class='id identifier rubyid_yard_tags'>yard_tags</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n\n</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="yard-instance_method">
+  
+    #<strong>yard</strong>(options: &quot;&quot;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Same as “build” + generates yard `docs.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+114
+115
+116
+117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard.rb', line 114</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_yard'>yard</span><span class='lparen'>(</span><span class='label'>options:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="ReadmeYard/YardOptsManager.html" title="ReadmeYard::YardOptsManager (class)">YardOptsManager</a></span></span><span class='period'>.</span><span class='id identifier rubyid_upsert_yardopts'><span class='object_link'><a href="ReadmeYard/YardOptsManager.html#upsert_yardopts-class_method" title="ReadmeYard::YardOptsManager.upsert_yardopts (method)">upsert_yardopts</a></span></span>
+  <span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='label'>options:</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon May  5 08:57:06 2025 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.4.2).
+</div>
+
+    </div>
+  </body>
+</html>
