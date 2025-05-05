@@ -1,6 +1,8 @@
 # Readme Yard 🌿
 [![Gem Version](https://badge.fury.io/rb/readme_yard.svg)](https://badge.fury.io/rb/readme_yard)
 
+**Code Version: {@string ReadmeYard::VERSION}**
+
 {@readme ReadmeYard}
 
 ---

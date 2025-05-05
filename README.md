@@ -1,6 +1,8 @@
 # Readme Yard 🌿
 [![Gem Version](https://badge.fury.io/rb/readme_yard.svg)](https://badge.fury.io/rb/readme_yard)
 
+**Code Version: 0.4.0**
+
 Build a better README with [YARD](https://yardoc.org)
 by generating it straight from the source.
 
