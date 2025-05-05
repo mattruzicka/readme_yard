@@ -26,7 +26,7 @@ Here's the [full documentation](https://rubydoc.info/github/mattruzicka/readme_y
 
 ⚠️ **Generated file warning** – Edit README_YARD.md, not README.md. Changes to README.md will be lost when running `readme build`.
 
-### Future Work
+**Future Work**
 - Implement safeguards to prevent accidental edits to README.md
 - Support bidirectional editing through git integration
 
@@ -293,6 +293,6 @@ ReadmeYard::ExampleTag.hello_world #=> "Hello 🌎 🌍 🌏"
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mattruzicka/yard-readme.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mattruzicka/readme_yard.
 
 Thanks for reading me, the README that documents how to document the README with code that documents itself 🤯
