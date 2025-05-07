@@ -26,7 +26,7 @@
 - [Standalone Tag Usage](#standalone-tag-usage)
 - [Example Tag](#example-tag)
 - [Contributing](#contributing)
-- [Documentation](https://mattruzicka.github.io/readme_yard/)
+- [Documentation]({@string ReadmeYard::DOCS_URL})
 
 ---
 
