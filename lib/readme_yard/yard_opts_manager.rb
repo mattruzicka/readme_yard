@@ -26,13 +26,14 @@ class ReadmeYard
           warn_about_supported_markdown
           readme_plugin_opts
         else
-          readme_plugin_opts << "--markup markdown\n"
+          readme_plugin_opts << "--markup markdown\n--markup-provider redcarpet\n"
         end
       end
 
       def default_readme_plugin_opts(yardopts_text)
         readme_opts = +""
-        readme_opts << "\n" unless yardopts_text.lines.last.include?("\n")
+        last_line = yardopts_text.lines.last
+        readme_opts << "\n" if last_line && !last_line.include?("\n")
         readme_opts << "--plugin readme\n"
       end
 
