@@ -1,3 +1,7 @@
+## 0.6.0 - 2025-05-09
+
+- Add redcarpet as a dependency
+
 ## 0.5.0 - 2025-05-08
 
 - Enhance string tag normalization to support single quotes
