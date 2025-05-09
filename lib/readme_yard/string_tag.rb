@@ -39,8 +39,13 @@ class ReadmeYard
         return normalize_value_for_heredoc(string_value) if string_value.strip.start_with?("<<~")
 
         # Handle regular string format
-        string_value.delete_prefix!('"')
-        string_value.delete_suffix!('"')
+        if string_value.start_with?('"')
+          string_value.delete_prefix!('"')
+          string_value.delete_suffix!('"')
+        elsif string_value.start_with?("'")
+          string_value.delete_prefix!("'")
+          string_value.delete_suffix!("'")
+        end
 
         # Replace different line continuation patterns
         # This handles patterns like: " \\\n" and \\\n"

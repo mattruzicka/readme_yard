@@ -92,4 +92,10 @@ class StringTagTest < Minitest::Test
     expected = "Using a different delimiter.\nStill works the same."
     assert_equal expected, ReadmeYard::StringTag.normalize_yard_value(input)
   end
+
+  def test_normalize_yard_value_with_single_quotes
+    input = "'This is a string with single quotes'"
+    expected = "This is a string with single quotes"
+    assert_equal expected, ReadmeYard::StringTag.normalize_yard_value(input)
+  end
 end

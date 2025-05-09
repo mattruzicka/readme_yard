@@ -1,3 +1,7 @@
+## 0.5.0 - 2025-05-08
+
+- Enhance string tag normalization to support single quotes
+
 ## 0.4.0 - 2025-05-05
 
 - Added colored diff output when readme build/yard commands finish, showing changes to README.md using the Diffy gem
