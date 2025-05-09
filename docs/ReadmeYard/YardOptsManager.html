@@ -147,8 +147,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -170,8 +169,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -193,8 +191,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -216,8 +213,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -239,8 +235,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -262,8 +257,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -321,7 +315,7 @@
     <span class='id identifier rubyid_warn_about_supported_markdown'>warn_about_supported_markdown</span>
     <span class='id identifier rubyid_readme_plugin_opts'>readme_plugin_opts</span>
   <span class='kw'>else</span>
-    <span class='id identifier rubyid_readme_plugin_opts'>readme_plugin_opts</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--markup markdown\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_readme_plugin_opts'>readme_plugin_opts</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--markup markdown\n--markup-provider redcarpet\n</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -344,12 +338,12 @@
       <pre class="lines">
 
 
-39
 40
-41</pre>
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/readme_yard/yard_opts_manager.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard/yard_opts_manager.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_yardopts_file'>create_yardopts_file</span>
   <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#YARDOPTS_FILE-constant" title="ReadmeYard::YardOptsManager::YARDOPTS_FILE (constant)">YARDOPTS_FILE</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--plugin readme\n--markup markdown\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -378,14 +372,16 @@
 34
 35
 36
-37</pre>
+37
+38</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/readme_yard/yard_opts_manager.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_default_readme_plugin_opts'>default_readme_plugin_opts</span><span class='lparen'>(</span><span class='id identifier rubyid_yardopts_text'>yardopts_text</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_readme_opts'>readme_opts</span> <span class='op'>=</span> <span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_readme_opts'>readme_opts</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_yardopts_text'>yardopts_text</span><span class='period'>.</span><span class='id identifier rubyid_lines'>lines</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_last_line'>last_line</span> <span class='op'>=</span> <span class='id identifier rubyid_yardopts_text'>yardopts_text</span><span class='period'>.</span><span class='id identifier rubyid_lines'>lines</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span>
+  <span class='id identifier rubyid_readme_opts'>readme_opts</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_last_line'>last_line</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_last_line'>last_line</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_readme_opts'>readme_opts</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--plugin readme\n</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
@@ -472,13 +468,13 @@
       <pre class="lines">
 
 
-43
 44
 45
-46</pre>
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/readme_yard/yard_opts_manager.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/readme_yard/yard_opts_manager.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_warn_about_supported_markdown'>warn_about_supported_markdown</span>
   <span class='const'><span class='object_link'><a href="Logger.html" title="ReadmeYard::Logger (class)">Logger</a></span></span><span class='period'>.</span><span class='id identifier rubyid_warn'><span class='object_link'><a href="Logger.html#warn-class_method" title="ReadmeYard::Logger.warn (method)">warn</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>*Readme Yard* works best with markdown. </span><span class='tstring_end'>&quot;</span></span> \
@@ -494,7 +490,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon May  5 09:48:52 2025 by
+  Generated on Fri May  9 00:45:02 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.2).
 </div>
